@@ -1,14 +1,180 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Main" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="115px"
+        android:layout_marginBottom="-7px"
+        android:background="@drawable/top" >
 
-</RelativeLayout>
+        <!-- There will be an ImageView with the logo in it eventually -->
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:text="9:35am"
+            android:textAppearance="?android:attr/textAppearanceLargeInverse"
+            android:textSize="35px" />
+        
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/related"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="122px"
+            android:clipToPadding="false" >
+            
+        </ListView>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:orientation="horizontal" >
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="112px"
+                android:layout_marginRight="12px"
+                android:layout_weight="1"
+                android:background="@drawable/block" >
+
+                <TextView
+                    android:id="@+id/alarm_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5px"
+                    android:text="9:45"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textSize="45px" />
+
+                <TextView
+                    android:id="@+id/alarm_am"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5px"
+                    android:layout_toRightOf="@id/alarm_time"
+                    android:paddingTop="13px"
+                    android:text="am"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textSize="23px" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/alarm_am"
+                    android:layout_toRightOf="@id/alarm_time" />
+                
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="112px"
+                android:layout_weight="1"
+                android:background="@drawable/block" >
+
+                <TextView
+                    android:id="@+id/weekday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10px"
+                    android:text="Wednesday"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textSize="23px" />
+
+                <TextView
+                    android:id="@+id/monthDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10px"
+                    android:text="23"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textSize="55px" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="112px"
+                android:layout_marginLeft="12px"
+                android:layout_weight="1"
+                android:background="@drawable/block" >
+
+                <TextView
+                    android:id="@+id/weather_high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10px"
+                    android:paddingRight="5px"
+                    android:text="@string/weather_high"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textSize="45px" />
+
+                <TextView
+                    android:id="@+id/weather_degree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/weather_high"
+                    android:layout_marginLeft="-5px"
+                    android:layout_toRightOf="@id/weather_high"
+                    android:text="@string/degree"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textSize="45px" />
+
+                <LinearLayout
+                    android:layout_width="70px"
+                    android:layout_height="2px"
+                    android:layout_below="@id/weather_high"
+                    android:layout_marginTop="-5px"
+                    android:layout_centerHorizontal="true"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/weather_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/weather_high"
+                    android:layout_centerHorizontal="true"
+                    android:paddingRight="3px"
+                    android:text="@string/weather_low"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textSize="25px" />
+
+                <TextView
+                    android:id="@+id/weather_degree_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/weather_low"
+                    android:layout_marginLeft="-3px"
+                    android:layout_toRightOf="@id/weather_low"
+                    android:text="@string/degree"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:textSize="25px" />
+                
+            </RelativeLayout>
+
+        </LinearLayout>
+        
+    </RelativeLayout>
+
+</LinearLayout>
